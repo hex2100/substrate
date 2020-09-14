@@ -11,11 +11,11 @@ jobs:
         uses: andymckay/labeler@master
         if: github.event.pull_request.draft == true
         with:
-          add-labels: 'A3-inprogress'
+          add-labels: 'B0-silent'
           remove-labels: 'A0-pleasereview'
       - name: Label PRs
         uses: andymckay/labeler@master
         if: github.event.pull_request.draft == false && ! contains(github.event.pull_request.labels.*.name, 'A2-insubstantial')
         with:
-          add-labels: 'A0-pleasereview'
+          add-labels: 'B0-silent'
           remove-labels: 'A3-inprogress'
